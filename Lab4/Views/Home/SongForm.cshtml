@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model dynamic
+@{
+    ViewData["Title"] = "Song Form";
+}
+
+<h2>Enter the number of monkeys</h2>
+
+<form asp-action="Sing" method="post">
+    <div class="form-group">
+        <label for="numMonkeys">Number of Monkeys (50-100):</label>
+        <input type="number" class="form-control" id="numMonkeys" name="numMonkeys" min="50" max="100" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
