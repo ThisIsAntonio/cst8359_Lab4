@@ -4,49 +4,20 @@
 @model int
 @{
     ViewData["Title"] = "Sing";
-    var numMonkeys = Model;
-    var pronoun = "he";
 }
 
-<h2>Singing about @numMonkeys little monkeys...</h2>
+<h2>Singing about @ViewBag.NumberOfMonkeys little monkeys...</h2>
 
-@for (int i = numMonkeys; i > 0; i--)
+@if (ViewBag.NumberOfMonkeys > 0)
 {
-    if (i % 2 == 0)
+    for (int i = ViewBag.NumberOfMonkeys; i > 0; i--)
     {
-        pronoun = "she";
-    }
-    else
-    {
-        pronoun = "he";
-    }
-
-    if (i == 1)
-    {
-        <p>One little monkey jumping on the bed,</p>
-        <p>he fell off and bumped his head,</p>
-    }
-    else
-    {
-        <p>@i little monkeys jumping on the bed,</p>
-        <p>one fell off and bumped @pronoun head,</p>
-    }
-
-    if (i > 1)
-    {
-        <p>Mama called the doctor and the doctor said,</p>
-        <p>"No more monkeys jumping on the bed!"</p>
-    }
-    else
-    {
-        <p>Mama called the doctor and the doctor said,</p>
-        <p>"No more monkeys jumping on the bed!"</p>
+        <p>@i little monkeys jumping on the bed...</p>
     }
 }
+else
+{
+    <p>No more monkeys jumping on the bed!</p>
+}
 
-<p>No more monkeys jumping on the bed!</p>
-
-<form asp-action="SongForm" method="get">
-    <button type="submit" class="btn btn-primary">Play Again</button>
-</form>
-
+<a href="@Url.Action("SongForm", "Home")" class="btn btn-primary">Play Again</a>

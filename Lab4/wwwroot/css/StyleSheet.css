@@ -1,5 +1,9 @@
 ﻿body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 header {
@@ -10,7 +14,7 @@ header {
 }
 
 footer {
-    background-color: #f1f1f1;
+    background-color: #f8f9fa;
     color: #333;
     padding: 10px 0;
     text-align: center;
@@ -20,7 +24,9 @@ footer {
 }
 
 .container {
-    margin: 20px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 120px;
 }
 
 .form-group {
