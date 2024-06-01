@@ -40,3 +40,21 @@ footer {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px 20px;
+}
+
+    td.label {
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td.value {
+        text-align: left;
+    }
